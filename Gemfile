@@ -32,6 +32,8 @@ gem 'sass-rails', '>= 3.2'
 
 gem 'font-awesome-sass', '~> 4.4.0'
 
+gem 'devise', '3.4.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
