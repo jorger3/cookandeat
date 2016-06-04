@@ -1,8 +1,3 @@
 class Product < ActiveRecord::Base
-    def new
-    end
-    
-    def show
-        @product = Product.all
-    end
+    has_one :product2
 end
