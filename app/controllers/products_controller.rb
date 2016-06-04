@@ -1,7 +1,5 @@
 class ProductsController < ApplicationController
-  def new
-  end
-  
-  def create
-  end
+    def new
+        @product = Product.new
+    end
 end

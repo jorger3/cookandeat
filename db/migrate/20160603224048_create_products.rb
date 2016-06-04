@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :tipo
       t.text :linea
       t.integer :acompanamiento
+      t.integer :precio
       
       t.timestamps
     end

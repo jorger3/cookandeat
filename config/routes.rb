@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'static_pages/admin'
+
   devise_for :users
   resources :users
+  resources :products
   resources :contacts
   root 'pages#home'
   get '/about' => 'pages#about'
