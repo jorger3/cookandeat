@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'static_pages/admin'
 
-  devise_for :users
-  resources :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+  resources :users do
+    resource :profile
+  end
   resources :products
   resources :contacts
   root 'pages#home'

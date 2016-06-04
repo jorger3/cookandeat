@@ -23,6 +23,11 @@
     <div class="collapse navbar-collapse" id="main-nav-collapse">
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+          <% if current_user.profile %>
+            <li><%= link_to "Mi Perfil", "#" %></li>
+          <% else %>
+            <li><%= link_to "Crear perfil", new_user_profile_path(current_user.id), method: :get %></li>
+          <% end %>
           <% if current_user.admin? %>
             <li><%= link_to "Menu Administrador", static_pages_admin_path %></li>
             <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
@@ -30,8 +35,8 @@
             <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
           <% end %>
         <% else %>
-          <%= link_to "Logueate", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
-          <%= link_to "Registrate", new_user_registration_path, class: 'btn btn-success navbar-btn', method: :get %>
+          <li><%= link_to "Logueate", new_user_session_path, method: :get %></li>
+          <li><%= link_to "Registrate", new_user_registration_path, method: :get %></li>
         <% end %>
       </ul>
     
